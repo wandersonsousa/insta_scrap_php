@@ -7,6 +7,6 @@ $client = new Client();
 
 $crawler = $client->request('GET', 'https://www.instagram.com/wander_dev/');
 
-echo $crawler->filterXpath('//meta[@property="og:image"]')->attr('content');
+//echo $crawler->filterXpath('//meta[@property="og:image"]')->attr('content');
 
 echo $crawler->html('<b>Error</b>');
