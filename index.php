@@ -5,7 +5,7 @@ use Goutte\Client;
 
 $client = new Client();
 
-$crawler = $client->request('GET', 'https://www.instagram.com/wander_dev/');
+$crawler = $client->request('GET', 'https://www.instagram.com/wander_dev/?__a=1');
 
 //echo $crawler->filterXpath('//meta[@property="og:image"]')->attr('content');
 
