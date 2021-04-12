@@ -1,0 +1,15 @@
+{
+    "name": "wanderson/scraping",
+    "description": "scraping instagram data",
+    "type": "project",
+    "require": {
+        "fabpot/goutte": "^4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wanderson Sousa",
+            "email": "wandersonsousa3004@gmail.com"
+        }
+    ]
+}
