@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'ca2614913d9b289cbc5ddec7e7f1fdbf9a929812',
+    'reference' => 'a82298ed69db312493af3544480af2e3721671b3',
     'name' => 'wanderson/scraping',
   ),
   'versions' => 
@@ -79,6 +79,42 @@
       ),
       'reference' => '120b605dfeb996808c31b6477290a714d356e822',
     ),
+    'symfony/dom-crawler' => 
+    array (
+      'pretty_version' => 'v5.2.4',
+      'version' => '5.2.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '400e265163f65aceee7e904ef532e15228de674b',
+    ),
+    'symfony/polyfill-ctype' => 
+    array (
+      'pretty_version' => 'v1.22.1',
+      'version' => '1.22.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c6c942b1ac76c82448322025e084cadc56048b4e',
+    ),
+    'symfony/polyfill-mbstring' => 
+    array (
+      'pretty_version' => 'v1.22.1',
+      'version' => '1.22.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5232de97ee3b75b0360528dae24e73db49566ab1',
+    ),
+    'symfony/polyfill-php80' => 
+    array (
+      'pretty_version' => 'v1.22.1',
+      'version' => '1.22.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'dc3063ba22c2a1fd2f45ed856374d79114998f91',
+    ),
     'wanderson/scraping' => 
     array (
       'pretty_version' => 'dev-master',
@@ -86,7 +122,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'ca2614913d9b289cbc5ddec7e7f1fdbf9a929812',
+      'reference' => 'a82298ed69db312493af3544480af2e3721671b3',
     ),
   ),
 );

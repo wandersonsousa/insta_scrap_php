@@ -2,6 +2,7 @@
 require_once './vendor/autoload.php';
 
 use GuzzleHttp\Client;
+use Symfony\Component\DomCrawler\Crawler;
 
 $client = new Client([
     // Base URI is used with relative requests
@@ -9,8 +10,28 @@ $client = new Client([
     'cookies' => true
 ]);
 
+
+
+function respond($pageResponse)
+{
+    header('Content-type: application/json');
+    echo json_encode($pageResponse);
+}
+
+
+
+if (!isset($_GET['username'])) {
+    $pageResponse = [
+        'success' => false,
+        'msg' => 'invalid username'
+    ];
+    respond($pageResponse);
+    exit();
+}
+$username = $_GET['username'];
+
 $data = [
-    'usuario' => 'wander_dev',
+    'usuario' => $username,
     'quantidade' => '250',
     'reposicao' => '0'
 ];
@@ -22,7 +43,15 @@ try {
     if ($response->getStatusCode() == 200) {
         $paymentRes = $client->post('https://www.instabrasil.com/pagamento');
         if ($paymentRes->getStatusCode() == 200) {
-            print (string) $paymentRes->getBody();
+            header('Content-type: application/json');
+
+            $dom = new Crawler((string) $paymentRes->getBody());
+            $imgProfile = $dom->filter('#body > .container .row .list-group-item img')->attr('src');
+
+            $pageResponse = [
+                'img' => $imgProfile
+            ];
+            respond($pageResponse);
             exit();
         }
     }
