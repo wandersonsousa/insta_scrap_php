@@ -6,6 +6,9 @@ use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\CssSelector\CssSelectorConverter;
 use Symfony\Component\CssSelector;
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header("Access-Control-Allow-Headers: X-Requested-With");
 
 $client = new Client([
     // Base URI is used with relative requests
@@ -53,6 +56,7 @@ try {
                 $imgProfile = $dom->filter('#body > .container .row .list-group-item img')->attr('src');
 
                 $pageResponse = [
+                    'success' => true,
                     'img' => $imgProfile
                 ];
                 respond($pageResponse);
