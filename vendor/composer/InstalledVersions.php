@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'a82298ed69db312493af3544480af2e3721671b3',
+    'reference' => 'd05e748bd421ae715dc57831d3d0306c0d0374c8',
     'name' => 'wanderson/scraping',
   ),
   'versions' => 
@@ -103,6 +103,15 @@ private static $installed = array (
       ),
       'reference' => '120b605dfeb996808c31b6477290a714d356e822',
     ),
+    'symfony/css-selector' => 
+    array (
+      'pretty_version' => 'v5.2.4',
+      'version' => '5.2.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f65f217b3314504a1ec99c2d6ef69016bb13490f',
+    ),
     'symfony/dom-crawler' => 
     array (
       'pretty_version' => 'v5.2.4',
@@ -146,7 +155,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'a82298ed69db312493af3544480af2e3721671b3',
+      'reference' => 'd05e748bd421ae715dc57831d3d0306c0d0374c8',
     ),
   ),
 );

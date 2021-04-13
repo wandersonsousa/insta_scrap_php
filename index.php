@@ -3,6 +3,9 @@ require_once './vendor/autoload.php';
 
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\CssSelector\CssSelectorConverter;
+use Symfony\Component\CssSelector;
+
 
 $client = new Client([
     // Base URI is used with relative requests
@@ -46,13 +49,22 @@ try {
             header('Content-type: application/json');
 
             $dom = new Crawler((string) $paymentRes->getBody());
-            $imgProfile = $dom->filter('#body > .container .row .list-group-item img')->attr('src');
+            try {
+                $imgProfile = $dom->filter('#body > .container .row .list-group-item img')->attr('src');
 
-            $pageResponse = [
-                'img' => $imgProfile
-            ];
-            respond($pageResponse);
-            exit();
+                $pageResponse = [
+                    'img' => $imgProfile
+                ];
+                respond($pageResponse);
+                exit();
+            } catch (\Throwable $th) {
+                $pageResponse = [
+                    'success' => false,
+                    'msg' => 'invalid username'
+                ];
+                respond($pageResponse);
+                exit();
+            }
         }
     }
 } catch (\Throwable $th) {
